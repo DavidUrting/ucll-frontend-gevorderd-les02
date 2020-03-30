@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>UCLL URL Checker</title>
+    <link href="site.css" rel="stylesheet" />
+</head>
+<body>
+    <form>
+        <!-- Test strings:
+            https://www.symbolics.com:8080/hello?who=world#fragment 
+        -->
+        <label for="url">Te valideren URL</label>
+        <input type="text" id="url" name="url" class="input-large" />
+        <br />
+        <input type="button" onclick="checkUrl()" value="Controleer" />
+        <br />
+    </form>
+    <section id="urlParts" style="display: none">
+        <hr />
+        <label for="url" class="label-medium">Schema</label>
+        <input type="text" id="schema" name="schema" readonly />
+        <br />
+        <label for="url" class="label-medium">Host</label>
+        <input type="text" id="host" name="host" readonly />
+        <br />
+        <label for="url" class="label-medium">Port</label>
+        <input type="text" id="port" name="port" readonly />
+        <br />
+        <label for="url" class="label-medium">Path</label>
+        <input type="text" id="path" name="path" readonly />
+        <br />
+        <label for="url" class="label-medium">Query string</label>
+        <input type="text" id="query" name="query" readonly />
+        <br />
+        <label for="url" class="label-medium">Fragment</label>
+        <input type="text" id="fragment" name="fragment" readonly />
+    </section>
+    <script src="url-checker.js"></script>
+</body>
+</html>
