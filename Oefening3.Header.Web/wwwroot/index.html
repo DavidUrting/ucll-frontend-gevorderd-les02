@@ -1,0 +1,14 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Een 15-seconden pagina...</title>
+</head>
+<body>
+    <h1>Een 15-seconden pagina...</h1>
+    <p>Deze pagina blijft 15 seconden in de cache zitten. Na 15 seconden wordt deze terug opgehaald bij de server.</p>
+    <p>Een <code>Cache-Control</code> header wordt toegevoegd in <code>Startup.cs</code>.</p>
+    <p>Indien je test in Chrome, zie <a href="https://stackoverflow.com/questions/11245767/is-chrome-ignoring-cache-control-max-age">SO voor een waarschuwing</a>. Best is dat je gewoon test in een nieuwe tab.</p>
+    <p>Je kan zien of de pagina uit de cache komt door naar de Network tab te kijken bij Developer tools: bij index.html zou <em>(disk cache)</em> moeten staan als je binnen de 15 seconden de pagina opvraagt (in een andere tab dus).</p>
+</body>
+</html>

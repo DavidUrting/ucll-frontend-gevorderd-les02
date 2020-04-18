@@ -27,13 +27,19 @@ namespace Oefening3.Header.Web
             }
 
             app.UseRouting();
-
-            app.UseEndpoints(endpoints =>
+            app.UseDefaultFiles();
+            app.UseStaticFiles(new StaticFileOptions
             {
-                endpoints.MapGet("/", async context =>
+                OnPrepareResponse = ctx =>
                 {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                    // Requires the following import:
+                    // using Microsoft.AspNetCore.Http;
+                    
+                    if (ctx.File.Name.ToLower().EndsWith("index.html"))
+                    {
+                        ctx.Context.Response.Headers.Append("Cache-Control", "public, max-age=15");
+                    }
+                }
             });
         }
     }
